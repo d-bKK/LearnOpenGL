@@ -131,10 +131,6 @@
     <ClCompile Include="..\..\..\..\..\Downloads\glad (1)\src\glad.c" />
     <ClCompile Include="glsl.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="3.3.shader.fs" />
-    <None Include="3.3.shader.vs" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
