@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\wb.chenyankai01\Documents\Cyk\GLSL\GLSL\ThirdParty\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\wb.chenyankai01\Documents\Cyk\GLSL\GLSL\ThirdParty\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Project\LearnOpenGL\ThirdParty\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Project\LearnOpenGL\ThirdParty\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -128,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\glad (1)\src\glad.c" />
+    <ClCompile Include="glad.c" />
     <ClCompile Include="glsl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
