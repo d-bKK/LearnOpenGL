@@ -1,0 +1,14 @@
+# Blender 4.4.3 MTL File: 'Knives_pack.blend'
+# www.blender.org
+
+newmtl M_knives
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/Users/wb.chenyankai01/Downloads/knives_pack_blender_v1000/knives_mat/knives_BaseColor.png
+map_Ns C:/Users/wb.chenyankai01/Downloads/knives_pack_blender_v1000/knives_mat/knives_Roughness.png
+map_refl C:/Users/wb.chenyankai01/Downloads/knives_pack_blender_v1000/knives_mat/knives_Metallic.png
+map_Bump -bm 1.000000 C:/Users/wb.chenyankai01/Downloads/knives_pack_blender_v1000/knives_mat/knives_Normal.png

@@ -60,7 +60,7 @@ public:
         glCompileShader(fragment);
         checkCompileErrors(fragment, "FRAGMENT");
         // shader Program
-        ID = glCreateProgram();
+        ID = glCreateProgram();//​​创建着色器程序对象​​，program
         glAttachShader(ID, vertex);
         glAttachShader(ID, fragment);
         glLinkProgram(ID);
@@ -68,15 +68,15 @@ public:
         // delete the shaders as they're linked into our program now and no longer necessary
         glDeleteShader(vertex);
         glDeleteShader(fragment);
-
     }
+
     // activate the shader
     // ------------------------------------------------------------------------
     void use() const
     { 
-        glUseProgram(ID); 
+        glUseProgram(ID); //​​激活着色器程序​​
     }
-    // utility uniform functions
+    // utility uniform functions  ​​将 CPU 端的数据传递给 GPU 着色器中 uniform 变量，用来把外部数据往shader传的
     // ------------------------------------------------------------------------
     void setBool(const std::string &name, bool value) const
     {         
