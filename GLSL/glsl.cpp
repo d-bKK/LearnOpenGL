@@ -26,7 +26,7 @@ const unsigned int SCR_WIDTH = 1280;
 const unsigned int SCR_HEIGHT = 720;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 13.0f));
 float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 bool firstMouse = true;
@@ -104,21 +104,30 @@ int main()
 
         // load PBR material textures
     // --------------------------
-    std::string texPath1 = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/knives_BaseColor.png";
-    std::string texPath2 = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/knives_Normal.png";
-    std::string texPath3 = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/knives_Metallic.png";
-    std::string texPath4 = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/knives_Roughness.png";
-    std::string texPath5 = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/knives_Roughness.png";
-    unsigned int albedo    = loadTexture(texPath1.c_str());
-    unsigned int normal    = loadTexture(texPath2.c_str());
-    unsigned int metallic  = loadTexture(texPath3.c_str());
-    unsigned int roughness = loadTexture(texPath4.c_str());
-    unsigned int ao        = loadTexture(texPath5.c_str());
+    std::string albedoTex = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/bronze/v21_low_defaultMat_BaseColor.png";
+    std::string normalTex = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/bronze/v21_low_defaultMat_Normal.png";
+    std::string metallicTex = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/bronze/v21_low_defaultMat_Metallic";
+    std::string roughnessTex = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/bronze/v21_low_defaultMat_Roughness.png";
+    std::string AOTex = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/pureWhite.png";
+
+    //---------------------------
+    std::string pureBlackTex = "E:/Project/LearnOpenGL/GLSL/resources/textures/pureBlack.png";
+    std::string pureWhiteTex = "E:/Project/LearnOpenGL/GLSL/resources/textures/pureWhite.png";
+    std::string pureNormalTex = "E:/Project/LearnOpenGL/GLSL/resources/textures/pureNormal.png";
+    //---------------------------
+    unsigned int albedo    = loadTexture(albedoTex.c_str());
+    unsigned int normal    = loadTexture(normalTex.c_str());
+    unsigned int metallic  = loadTexture(pureWhiteTex.c_str());
+    unsigned int roughness = loadTexture(roughnessTex.c_str());
+    unsigned int ao        = loadTexture(pureWhiteTex.c_str());
 
 
     // // load models
     // // -----------
-    std::string modelPath = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/model/knife/Knives_pack.obj";
+    std::string modelPath = "E:/Project/LearnOpenGL/GLSL/resources/model/mask/mask.obj";
+    //---------------
+    std::string testModelPath = "E:/Project/LearnOpenGL/GLSL/resources/model/simpleGeo/gapBox.obj";
+    //---------------
     Model objModel(modelPath.c_str());
 
     backgroundShader.use();
@@ -128,16 +137,16 @@ int main()
     // lights
     // ------
     glm::vec3 lightPositions[] = {
-        glm::vec3(-10.0f,  10.0f, 10.0f),
-        glm::vec3( 10.0f,  10.0f, 10.0f),
-        glm::vec3(-10.0f, -10.0f, 10.0f),
-        glm::vec3( 10.0f, -10.0f, 10.0f),
+        glm::vec3(10.0f,  10.0f, 10.0f),
+        glm::vec3( -20.0f,  -10.0f, 10.0f),
+        // glm::vec3(-10.0f, -10.0f, 10.0f),
+        // glm::vec3( 10.0f, -10.0f, 10.0f),
     };
     glm::vec3 lightColors[] = {
+        glm::vec3(3000.0f, 3000.0f, 3000.0f),
         glm::vec3(300.0f, 300.0f, 300.0f),
-        glm::vec3(300.0f, 300.0f, 300.0f),
-        glm::vec3(300.0f, 300.0f, 300.0f),
-        glm::vec3(300.0f, 300.0f, 300.0f)
+        // glm::vec3(300.0f, 300.0f, 300.0f),
+        // glm::vec3(300.0f, 300.0f, 300.0f)
     };
     int nrRows = 7;
     int nrColumns = 7;
@@ -160,7 +169,7 @@ int main()
     stbi_set_flip_vertically_on_load(true);
     int width, height, nrComponents;
 
-    std::string hdriPath = "C:/Users/wb.chenyankai01/Documents/Cyk/GLSL/GLSL/GLSL/resources/HDRI/monkstown_castle_2k.hdr";
+    std::string hdriPath = "E:/Project/LearnOpenGL/GLSL/resources/HDRI/photo_studio_loft_hall_4k.hdr";
     float *data = stbi_loadf(hdriPath.c_str(), &width, &height, &nrComponents, 0);
     unsigned int hdrTexture;
  if (data)

@@ -92,7 +92,7 @@ void main()
     vec3 albedo     = pow(texture(albedoMap, TexCoords).rgb, vec3(2.2));
     float metallic  = texture(metallicMap, TexCoords).r;
     float roughness = texture(roughnessMap, TexCoords).r;
-    roughness *= 0.4;
+    roughness *= 1.4;
     float ao        = texture(aoMap, TexCoords).r;
 
     vec3 N = getNormalFromMap();
